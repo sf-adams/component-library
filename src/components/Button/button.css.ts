@@ -1,7 +1,17 @@
-import { style } from "@vanilla-extract/css";
+import { recipe } from "@vanilla-extract/recipes";
 
-export const button = style({
-  border: "none",
-  borderRadius: "8px",
-  backgroundColor: "red"
+import { vars } from "../../themes/theme.css";
+
+export const buttonStyle = recipe({
+  base: {
+    border: "none",
+    borderRadius: "8px",
+    color: "#ffffff",
+  },
+  variants: {
+    color: {
+      primary: {backgroundColor: vars.colors.primary},
+      secondary: { backgroundColor: vars.colors.secondary }
+    }
+  }
 });
